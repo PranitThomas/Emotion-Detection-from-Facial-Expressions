@@ -9,14 +9,12 @@ This project implements a real-time pipeline for detecting human emotions from f
 - [Usage](#usage)
 
 ## Project Overview
-Facial Emotion Recognition (FER) is a rapidly advancing field in computer vision with applications in human-computer interaction, mental health tracking, and marketing. This project presents a robust system that can classify facial expressions into six primary emotion categories: Angry, Fear, Happy, Sad, Surprise, and Neutral.
-
-A key innovation in this project was the use of the **Focal Loss** function to address the significant class imbalance present in the FER2013 dataset, which was a critical factor in boosting model performance. Additionally, **temporal smoothing** is applied to provide a more stable and reliable emotion output in real-time video streams.
+Facial expressions are among the most powerful indicators of human emotion, but interpreting them reliably, especially by a machine, remains a complex task. This system tackles the challenge of mapping predefined emotion categories to subtle facial features. The project involved engineering a robust pipeline that integrates an improved GoogleNet architecture for emotion classification with the YOLOv11 face localization object detection model in real time, using the FER2013 dataset. **Temporal smoothing** was a key innovation, where predictions are collected within a 30-frame buffer and the majority-vote prediction is returned as the output. This approach effectively reduces frame-wise prediction noise and transient errors, producing a stable representation of emotional states, as a single frame is often insufficient to detect an emotion due to the intricate nature of human expressions. Another important enhancement was the adoption of the FocalLoss function, which addressed extreme class imbalance and led to a significant jump in performance, from 54.61% test accuracy with Cross-Entropy Loss to 69.63% with FocalLoss.
 
 ## Dataset
 The model was trained on the **FER2013 dataset**, which consists of 35,887 grayscale images of 48x48 pixels. The dataset is known for its difficulty as it contains "in-the-wild" images with variations in head poses, illumination, and occlusions.
 
-The "Disgust" class was removed due to its high ambiguity and skewed representation in the dataset.
+The project covers six primary emotion categories: Angry, Fear, Happy, Sad, Surprise, and Neutral. The "Disgust" class was removed due to its high ambiguity and skewed representation in the dataset.
 
 You can download the FER-2013 dataset from [Kaggle](https://www.kaggle.com/datasets/msambare/fer2013).
 
