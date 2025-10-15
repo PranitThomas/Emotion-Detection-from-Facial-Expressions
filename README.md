@@ -1,6 +1,6 @@
 # Emotion Detection from Facial Expressions
 
-This project implements a real-time pipeline for detecting human emotions from facial expressions using a deep learning approach. The system integrates a YOLOv11 model for face detection and an improved GoogleNet architecture for emotion classification, achieving a test accuracy of 69.63% on the challenging FER2013 dataset.
+This project implements a real-time pipeline for detecting human emotions from facial expressions using a deep learning approach. The system integrates a YOLOv11 model for face detection and an improved GoogleNet architecture for emotion classification, achieving a test accuracy of 69.63% on the FER2013 dataset.
 
 ## Table of Contents
 - [Project Overview](#project-overview)
